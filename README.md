@@ -26,52 +26,7 @@ This demonstrates the cconnection of MySQL database and Node.js to create a simp
    const app = express()
 
    
-   // Question 1 goes here
-     app.get('/questionOne', (req, res) => {
-    const patientDetails = 'SELECT patient_id, first_name, last_name, date_of_birth FROM patients';
-    db.query(patientDetails, (err, data) => {
-        // checking for error
-        if(err){
-            return res.status(400).send('Failed to connect to database');
-        }
-        res.status(200).send(data);
-    }); 
-    });
-
-
-
-   // Question 2 goes here
-   app.get('/questionTwo', (req, res) => {
-    const providerDetails = 'SELECT first_name, last_name, provider_specialty FROM providers';
-    db.query(providerDetails, (err, data) => {
-        if(err){
-            return res.status(400).send('Failed to retrieve details', err);
-        }
-        res.status(200).send(data);
-    });
-    });
-
-   // Question 3 goes here
-   app.get('/questionThree', (req, res) => {
-    const patientFirstName = 'SELECT first_name FROM patients';
-    db.query(patientFirstName, (err, data) => {
-        if(err){
-            return res.status(400).send('Failed to retrieve patients first name');
-        }
-        res.status(200).send(data);
-    });
-    });
-
-   // Question 4 goes here
-   app.get('/questionThree', (req, res) => {
-    const providerSpecialty = 'SELECT provider_specialty FROM providers';
-    db.query(providerSpecialty, (err, data) => {
-        if(err){
-            return res.status(400).send('Failed to retrieve provider specialty');
-        }
-        res.status(200).send(data);
-    });
-    });
+   
    
 
    // listen to the server
